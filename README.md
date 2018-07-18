@@ -74,7 +74,8 @@ Return values:
 
 ## ```readByte()```
 Reads a single byte value from the device.
-The value to returned is specified by passing one of the control byte names.
+
+The value to returned is specified by passing one of the [Control Byte](#control-bytes) names.
 
 ```c++
 byte readByte(byte control_byte, byte *result)
@@ -89,7 +90,8 @@ Return values:
 
 ## ```readValue()```
 Reads a 16-bit value from the device.
-The value to returned is specified by passing one of the `Readable Value` names.
+
+The value to returned is specified by passing one of the [Readable Value](#readable-values) names.
 
 ```c++
 byte readValue(byte get_value, uint16_t *result)
@@ -103,6 +105,7 @@ Return values:
 
 ## ```readByteFromAddress()```
 Reads a single byte from the Custom Memory area of the device.
+
 Use this function to read configuration values from the device.
 
 This function has 2 variants:
@@ -113,6 +116,7 @@ byte readByteFromAddress(byte address)
 Returns the byte from the custom memory address passed.
 
 If an error occurred, returns 0xFF.
+
 If the device does not support the value requested, returns 0xFF or 0x55.
 
 ---
@@ -120,6 +124,7 @@ If the device does not support the value requested, returns 0xFF or 0x55.
 byte readByteFromAddress(byte address, byte *result)
 ```
 On success, writes the byte from the custom memory address passed into `result`.
+
 If the device does not support the value requested, result will be 0xFF or 0x55.
 
 Return values:
@@ -129,12 +134,14 @@ Return values:
 
 ## ```readBytesFromAddress()```
 Reads a series of consecutive bytes from the Custom Memory area of the device.
+
 Use this function to read information such as the device name or serial number.
 
 ```c++
 byte readByteFromAddress(byte address, byte result[], byte length)
 ```
 On success, writes `length` consecutive bytes starting from the custom memory address passed into `result`.
+
 If the device does not support one or more values requested, result will contain 0xFF or 0x55.
 
 Return values:
@@ -148,6 +155,7 @@ Reads the entire Custom Memory area of the device into a buffer.
 byte dumpMemory(byte data[])
 ```
 On success, writes all 256 bytes of custom memory into `data`.
+
 If the device does not support one or more values requested, result will contain 0xFF or 0x55.
 
 Return values:
