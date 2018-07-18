@@ -1,10 +1,6 @@
 # Arduino-EE893
 Arduino library for interfacing with EE893 CO2 sensor and other E2 interface devices
 
-Original comms code from: https://github.com/blueberrye-io/BB-EE893
-
-Protocol specification: http://downloads.epluse.com/fileadmin/data/sw/Specification_E2_Interface.pdf
-
 # Usage
 To use the EE893 library:
 
@@ -260,4 +256,7 @@ These control byte names are used to specify which value to return from the ```r
 #define CO2_L 0xE1                            //Measure4/CO2 Value (Low Byte) 
 #define CO2_H 0xF1                            //Measure4/CO2 Value (High Byte) 
 ```
-
+# References
+* Original comms code from: https://github.com/blueberrye-io/BB-EE893
+* EE893 Datasheet: http://downloads.epluse.com/fileadmin/data/product/ee893/datasheet_EE893.pdf
+* E2 Protocol specification: http://downloads.epluse.com/fileadmin/data/sw/Specification_E2_Interface.pdf
